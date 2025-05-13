@@ -10,7 +10,7 @@ This is a simple `README.md` structure to demonstrate formatting.
 
 ![Example Image](https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/vizualizace/pohled1.png)
 
-<img src="https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/example.jpg" alt="Example Image" width="400"/>
+<img src="https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/vizualizace/pohled1.png" alt="Example Image" width="400"/>
 
 
 🔗 [Visit the Project on GitHub](https://github.com/vacmor119/Automatic-Greenhouse)
