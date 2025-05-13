@@ -1,4 +1,4 @@
-# Example Project
+# Automatic Greenhouse
 ## Overview
 ### Features
 This is a simple `README.md` structure to demonstrate formatting.
@@ -8,7 +8,7 @@ This is a simple `README.md` structure to demonstrate formatting.
 - Structured headings
 - An image for visual appeal
 
-![Example Image](https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/example.jpg)
+![Example Image](https://github.com/vacmor119/images/vizualizace/pohled1.png)
 
 🔗 [Visit the Project on GitHub](https://github.com/vacmor119/Automatic-Greenhouse)
 
