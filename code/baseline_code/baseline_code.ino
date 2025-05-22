@@ -353,7 +353,7 @@ void saveToEEPROM() {
   }
 }
 
-//RTC modul DS3231
+//RTC modul DS1302
 void time() {
   RTC.updateTime();             //nacteni casu z RTC
   int hour = RTC.hours;         //ulozeni hoidny
