@@ -1,6 +1,5 @@
 # Automatický Skleník
 ## ⚠️WIP⚠️
-### Features
 ### Kód
 - jednotlivé **funkce** a **globální** proměnné pro **přehlednost**
 - celá hotová část kódu `základ_kódu.ino` je ve složce *code*
