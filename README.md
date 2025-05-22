@@ -1,14 +1,9 @@
 # Automatický Skleník
 ## ⚠️WIP⚠️
 ### Features
-This is a simple `README.md` structure to demonstrate formatting.
-
-* **Bold** and *Italic* text
-- Bullet points for clarity
-- Structured headings
-- An image for visual appeal
 ### Kód
 - jednotlivé **funkce** a **globální** proměnné pro **přehlednost**
+- celá hotová část kódu `základ_kódu.ino` je ve složce *code*
 - kousek kódu:
 
 ```
@@ -33,6 +28,4 @@ void cursor(){
 <p align="center">
 <img src="https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/vizualizace/pohled1.png" alt="Example Image" width="700"/>
 </p>
-
-🔗 [Visit the Project on GitHub](https://github.com/vacmor119/Automatic-Greenhouse)
 
