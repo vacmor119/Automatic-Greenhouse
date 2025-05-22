@@ -8,7 +8,7 @@ This is a simple `README.md` structure to demonstrate formatting.
 - Structured headings
 - An image for visual appeal
 
-`//RTC modul DS1302
+```//RTC modul DS1302
 void time() {
   RTC.updateTime();             //nacteni casu z RTC
   int hour = RTC.hours;         //ulozeni hoidny
@@ -30,7 +30,7 @@ void time() {
     lcd.noBacklight();                                        //vypnuti podsviceni lcd
     Serial.println("casSviceni je false!");
   }
-}`
+}```
 
 
 ![Example Image](https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/vizualizace/pohled1.png)
