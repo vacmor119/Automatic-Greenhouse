@@ -1,4 +1,4 @@
-# Automatic Greenhouse
+# Automatický Skleník
 ## Overview
 ### Features
 This is a simple `README.md` structure to demonstrate formatting.
@@ -7,41 +7,32 @@ This is a simple `README.md` structure to demonstrate formatting.
 - Bullet points for clarity
 - Structured headings
 - An image for visual appeal
+### Kód
+- jednotlivé **funkce** a **globální** proměnné pro **přehlednost**
+- kousek kódu:
 
 ```
-//RTC modul DS1302
-void time() {
-  RTC.updateTime();             //nacteni casu z RTC
-  int hour = RTC.hours;         //ulozeni hoidny
-
-  if ((hour >= 6 && hour <= 9) || (hour >= 15 && hour <= 17)) {       //&& ma prednost pred ||, proto to musi byt v navic zavorkach
-    casZalevani = true;                                               // napr neni dobre zalevat rostliny v noci/poledne
-    Serial.println("casZalevani je true!");
-  } else {
-    casZalevani = false;                
-    Serial.println("casZalevani je false!");
+void cursor(){
+  if(lastCursorPosition != menuValue){
+    lcd.setCursor(0,lastCursorPosition);
+    lcd.print(" ");
   }
-
-  if(hour >= 6 && hour <= 19) {
-    casSviceni = true;                                        //zapnuti sviceni
-    lcd.backlight();                                          //zapnuti podsviceni lcd
-    Serial.println("casSviceni je true!");
+  lastCursorPosition = menuValue;
+  lcd.setCursor(0,menuValue);               
+  if(settingValue){
+    lcd.write(1);
   } else {
-    casSviceni = false;                                       //at to v noci nikoho neprudí svícením nebo tak neco a rostliny potrebujou taky tmu
-    lcd.noBacklight();                                        //vypnuti podsviceni lcd
-    Serial.println("casSviceni je false!");
+  lcd.write(2);
   }
 }
 
 ```
-
-
-![Example Image](https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/vizualizace/pohled1.png)
+### Vizualizace
+- předběžná představa realizace:
 
 <p align="center">
-<img src="https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/vizualizace/pohled1.png" alt="Example Image" width="400"/>
+<img src="https://github.com/vacmor119/Automatic-Greenhouse/blob/main/images/vizualizace/pohled1.png" alt="Example Image" width="800"/>
 </p>
 
 🔗 [Visit the Project on GitHub](https://github.com/vacmor119/Automatic-Greenhouse)
 
-Feel free to modify and expand upon it to suit your project's needs! 🚀
