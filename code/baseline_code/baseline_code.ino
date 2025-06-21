@@ -30,14 +30,13 @@ uint8_t e_s_hackem[8] = { 0x0A, 0x04, 0x0E, 0x11, 0x1F, 0x10, 0x0E, 0x00 };
 #define dtPin 3   // DT pin
 #define clkPin 4  // CLK pin
 //relay board setup
-#define airHumidifier 5    // air humidifier
-#define relay1 6    // topny teleso
-#define relay2 7    // Grow LED's
-#define relay3 8    // Čerpadlo
+#define fan 5    // vetraky pro vetrani
+#define heater 6    // topny teleso
+#define relay1 7    // Grow LED's
+#define relay2 8    // Čerpadlo
 //DHT 11 setup
 #define dhtPin 9    // DHT11 na pinu 9
-#define fan 10    //PWM na vetraky
-#define timeAdjustButton 13   //tlacitko na serizeni casu
+#define timeAdjustButton 10   //tlacitko na serizeni casu
 
 #define DHTTYPE DHT11
 DHT dht(dhtPin, DHTTYPE);
@@ -123,10 +122,10 @@ void setup(){
 
   pinMode(timeAdjustButton,INPUT_PULLUP);
 
-  pinMode(airHumidifier,OUTPUT);
+  pinMode(fan,OUTPUT);
+  pinMode(heater,OUTPUT);
   pinMode(relay1,OUTPUT);
   pinMode(relay2,OUTPUT);
-  pinMode(relay3,OUTPUT);
 
   attachInterrupt(digitalPinToInterrupt(dtPin), readEncoder, CHANGE);       //definovani interruptů
   attachInterrupt(digitalPinToInterrupt(swPin), readButton, FALLING);
@@ -149,23 +148,26 @@ void loop(){
     saveToEEPROM();
     time();
   }
+  if(temperatureMeasured<temperatureSet){
+    analogWrite(heater,)
+  }
   
   //TAHLE CELA CAST JE JENOM DEMO KDE JSEM TESTOVAL, ZDA ZATIM VSE FUNGUJE JAK MA (ve finale tam budou nejspis podminky s millis())
   if (humidityMeasured < humiditySet) {     
-    digitalWrite(airHumidifier,HIGH);            
+    digitalWrite(fan,HIGH);            
   } else {
   }
   if (temperatureMeasured < temperatureSet) {
-    digitalWrite(relay1,HIGH);            
+    digitalWrite(heater,HIGH);            
   }
   if (growLedSet && casSviceni) {
-    digitalWrite(relay2,HIGH);
+    digitalWrite(relay1,HIGH);
   }
   if(!growLedSet || !casSviceni) {
-    digitalWrite(relay2,LOW);
+    digitalWrite(relay1,LOW);
   }
   if (soilMoistureMeasured < soilMoistureSet && casZalevani) {
-    digitalWrite(relay3,HIGH);            
+    digitalWrite(relay2,HIGH);            
   }
 }
 
