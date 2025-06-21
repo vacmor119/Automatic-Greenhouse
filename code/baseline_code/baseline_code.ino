@@ -29,15 +29,14 @@ uint8_t e_s_hackem[8] = { 0x0A, 0x04, 0x0E, 0x11, 0x1F, 0x10, 0x0E, 0x00 };
 #define swPin 2   // SW pin
 #define dtPin 3   // DT pin
 #define clkPin 4  // CLK pin
-//relay board setup
-#define fan 5    // vetraky pro vetrani
-#define heater 6    // topny teleso
+#define dhtPin 5    // DHT11 na pinu 9
+#define timeAdjustButton 6   //tlacitko na serizeni casu
 #define relay1 7    // Grow LED's
 #define relay2 8    // Čerpadlo
-//DHT 11 setup
-#define dhtPin 9    // DHT11 na pinu 9
-#define timeAdjustButton 10   //tlacitko na serizeni casu
+#define fan 9    // vetraky pro vetrani
+#define heater 10    // topny teleso
 
+//DHT 11 setup
 #define DHTTYPE DHT11
 DHT dht(dhtPin, DHTTYPE);
 
@@ -127,6 +126,8 @@ void setup(){
   pinMode(relay1,OUTPUT);
   pinMode(relay2,OUTPUT);
 
+  TCCR1B = (TCCR1B & 0b11111000) | 0x01; // Nastavení prescaleru na 1 (maximální frekvence)
+
   attachInterrupt(digitalPinToInterrupt(dtPin), readEncoder, CHANGE);       //definovani interruptů
   attachInterrupt(digitalPinToInterrupt(swPin), readButton, FALLING);
 }
@@ -149,7 +150,7 @@ void loop(){
     time();
   }
   if(temperatureMeasured<temperatureSet){
-    analogWrite(heater,)
+    analogWrite(heater,250);
   }
   
   //TAHLE CELA CAST JE JENOM DEMO KDE JSEM TESTOVAL, ZDA ZATIM VSE FUNGUJE JAK MA (ve finale tam budou nejspis podminky s millis())
