@@ -1,0 +1,1 @@
+napětí na vstupu optočlenu je zeleně, napětí přes drain na source na IRF520 je žlutě, napětí 12V, zátěž 12V 30W, při proudu do vstupní diody cca 2mA
